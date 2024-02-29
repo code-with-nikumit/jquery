@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>pop-up</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".open").click(function() {
+                $(".popup-overlay").show();
+                $(".pop-up").hide();
+            });
+            $(".close").click(function() {
+                $(".pop-up").show();
+                $(".popup-overlay").hide();
+            });
+
+        });
+    </script>
+
+</head>
+
+<style>
+    .wrap {
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    h2 {
+        color: gray;
+        font-size: 30px;
+        font-weight: 600;
+    }
+    
+    button {
+        padding: 8px 35px;
+        font-size: 16px;
+        background-color: #bab2a8;
+        color: black;
+        border: none;
+        border-radius: 20px;
+    }
+    
+    button:hover {
+        border: 1px solid #666666;
+        background: #666666;
+        color: #ffffff;
+    }
+    
+    .popup-overlay {
+        display: none;
+        position: absolute;
+        background: #ffffff;
+        border: 3px solid #666666;
+        width: 600px;
+        height: 25%;
+        margin-top: 30px;
+        font-size: 20px;
+        color: gray;
+    }
+    
+    .popup-overlay.active {
+        display: block;
+    }
+    
+    .popup-item {
+        background-color: black;
+        opacity: 0.9;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        left: 0;
+    }
+</style>
+
+<body>
+
+    <div class="wrap">
+        <div class="pop-up">
+            <h2>jQuery Pop-Up Example</h2>
+            <button class="open">Open</button>
+        </div>
+
+        <div class="popup-overlay">
+
+            <div class="popup-content">
+                <h2>Pop-Up</h2>
+                <p> This is an example pop-up that you can make using jQuery.</p>
+                <button class="close">Close</button> </div>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
