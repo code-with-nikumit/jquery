@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>jquery</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#hide").click(function() {
+                $(".if").hide();
+            });
+            $("#show").click(function() {
+                $(".if").show();
+            });
+            $("#btn1").click(function() {
+                $(".this").hide(1000);
+            });
+            $("#btn2").click(function() {
+                $("p").toggle();
+            });
+            $("#btn3").click(function() {
+                $("#div1").fadeIn();
+                $("#div2").fadeIn("slow");
+                $("#div3").fadeIn(3000);
+            });
+            $("#btn4").click(function() {
+                $("#div4").fadeOut();
+                $("#div5").fadeOut("slow");
+                $("#div6").fadeOut(3000);
+            });
+            $("#btn5").click(function() {
+                $("#div7").fadeToggle();
+                $("#div8").fadeToggle("slow");
+                $("#div9").fadeToggle(3000);
+            });
+            $("#btn6").click(function() {
+                $("#div10").fadeTo("slow", 0.15);
+                $("#div11").fadeTo("slow", 0.4);
+                $("#div12").fadeTo("slow", 0.7);
+            });
+            $("#flip").click(function() {
+                $("#panel").slideDown("slow");
+            });
+            $("#flip1").click(function() {
+                $("#panel1").slideUp("slow");
+            });
+            $("#flip2").click(function() {
+                $("#panel2").slideToggle("slow");
+            });
+            $("#btn7").click(function() {
+                $(".Start").animate({
+                    right: '900px'
+                });
+            });
+            $("#btn8").click(function() {
+                $(".by").animate({
+                    right: '800px',
+                    opacity: '0.5',
+                    height: '150px',
+                    width: '150px'
+                });
+            });
+            $("#btn9").click(function() {
+                $(".all").animate({
+                    right: '500px',
+                    height: '+=150px',
+                    width: '+=150px'
+                });
+            });
+            $("#btn10").click(function() {
+                $(".default").animate({
+                    height: 'toggle'
+                });
+            });
+            $("#btn11").click(function() {
+                var div = $(".moved");
+                div.animate({
+                    height: '300px',
+                    opacity: '0.4'
+                }, "slow");
+                div.animate({
+                    width: '300px',
+                    opacity: '0.8'
+                }, "slow");
+                div.animate({
+                    height: '100px',
+                    opacity: '0.4'
+                }, "slow");
+                div.animate({
+                    width: '100px',
+                    opacity: '0.8'
+                }, "slow");
+            });
+            $("#btn12").click(function() {
+                var div = $(".and");
+                div.animate({
+                    right: '800px'
+                }, "slow");
+                div.animate({
+                    fontSize: '3em'
+                }, "slow");
+            });
+            $("#flip3").click(function() {
+                $("#panel3").slideDown(5000);
+            });
+            $("#stop").click(function() {
+                $("#panel3").stop();
+            });
+            $("#btn13").click(function() {
+                $(".little").hide("slow", function() {
+                    alert("The paragraph is now hidden");
+                });
+            });
+            $("#btn14").click(function() {
+                $("p").hide(1000);
+                alert("The paragraph is now hidden");
+            });
+            $("#btn15").click(function() {
+                $("#p1").css("color", "red").slideUp(2000).slideDown(2000);
+
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <div style="margin: 0px 400px; border: 3px solid black; padding: 30px 80px; background-color: aliceblue;">
+        <p class="if">If you click on the "Hide" button, I will disappear.</p>
+        <button id="hide" style="background-color: black; color: white; width: 70px; height: 30px;">Hide</button>
+        <button id="show" style="background-color: black; color: white; width: 70px; height: 30px;">Show</button>
+        <br><br><br>
+
+
+        <button id="btn1" style="background-color: black; color: white; width: 70px; height: 30px;">Hide</button>
+        <p class=" this">This is a paragraph with little content.</p>
+        <p class="this">This is another small paragraph.</p>
+        <br><br>
+
+        <button id="btn2">Toggle between hiding and showing the paragraphs</button>
+        <br>
+        <p class="with">This is a paragraph with little content.</p>
+        <p class="with">This is another small paragraph.</p>
+
+
+        <p>Demonstrate fadeIn() with different parameters.</p>
+        <br>
+        <button id="btn3">Click to fade in boxes</button>
+        <br><br>
+        <div id="div1" style="width:80px;height:80px;display:none;background-color:red;"></div><br>
+        <div id="div2" style="width:80px;height:80px;display:none;background-color:green;"></div><br>
+        <div id="div3" style="width:80px;height:80px;display:none;background-color:blue;"></div>
+        <br>
+
+
+        <p>Demonstrate fadeOut() with different parameters.</p>
+        <button id="btn4">Click to fade out boxes</button><br><br>
+        <div id="div4" style="width:80px;height:80px;background-color:red;"></div><br>
+        <div id="div5" style="width:80px;height:80px;background-color:green;"></div><br>
+        <div id="div6" style="width:80px;height:80px;background-color:blue;"></div>
+
+
+        <p>Demonstrate fadeToggle() with different speed parameters.</p>
+        <button id="btn5">Click to fade in/out boxes</button><br><br>
+        <div id="div7" style="width:80px;height:80px;background-color:red;"></div><br>
+        <div id="div8" style="width:80px;height:80px;background-color:green;"></div><br>
+        <div id="div9" style="width:80px;height:80px;background-color:blue;"></div>
+
+
+        <p>Demonstrate fadeTo() with different parameters.</p>
+        <button id="btn6">Click to fade boxes</button><br><br>
+        <div id="div10" style="width:80px;height:80px;background-color:red;"></div><br>
+        <div id="div11" style="width:80px;height:80px;background-color:green;"></div><br>
+        <div id="div12" style="width:80px;height:80px;background-color:blue;"></div><br><br>
+
+
+        <div id="flip" style="padding: 5px;text-align:center;background-color: #e5eecc; border: solid 1px #c3c3c3;">Click to slide down panel</div>
+        <div id="panel" style="padding: 50px; display:none;text-align: center;background-color: #e5eecc; border: solid 1px #c3c3c3;">Hello world!</div>
+        <br><br>
+        <div id="flip1" style="padding: 5px;text-align:center;background-color: #e5eecc; border: solid 1px #c3c3c3;">Click to slide up panel</div>
+        <div id="panel1" style="padding: 50px;text-align: center;background-color: #e5eecc; border: solid 1px #c3c3c3;">Hello world!</div>
+        <br><br>
+
+        <div id="flip2" style="padding: 5px;text-align:center;background-color: #e5eecc; border: solid 1px #c3c3c3;">Click to slide the panel down or up</div>
+        <div id="panel2" style="padding: 50px; display:none;text-align: center;background-color: #e5eecc; border: solid 1px #c3c3c3;">Hello world!</div>
+        <br><br>
+
+        <button id="btn7" style="background-color: black; color: white; width: 150px; height: 30px;">Start Animation</button>
+        <p>By default, all HTML elements have a static position, and cannot be moved. To manipulate the position, remember to first set the CSS position property of the element to relative, fixed, or absolute!</p>
+        <div class="Start" style="background:#98bf21;height:100px;width:100px;position:absolute;"></div>
+        <br><br><br><br><br><br><br><br>
+
+
+        <button id="btn8" style="background-color: black; color: white; width: 150px; height: 30px;">Start Animation</button>
+        <p>By default, all HTML elements have a static position, and cannot be moved. To manipulate the position, remember to first set the CSS position property of the element to relative, fixed, or absolute!</p>
+        <div class="by" style="background:#98bf21;height:100px;width:100px;position:absolute;"></div>
+        <br><br><br><br><br><br><br><br><br><br>
+
+
+        <button id="btn9" style="background-color: black; color: white; width: 150px; height: 30px;">Start Animation</button>
+        <p>By default, all HTML elements have a static position, and cannot be moved. To manipulate the position, remember to first set the CSS position property of the element to relative, fixed, or absolute!</p>
+        <div class="all" style="background:#c3c3c3;height:100px;width:100px;position:absolute; ;"></div>
+        <br><br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br>
+        <br>
+
+
+
+        <button id="btn10" style="background-color: black; color: white; width: 150px; height: 30px;">Start Animation</button>
+        <p>By default, all HTML elements have a static position, and cannot be moved. To manipulate the position, remember to first set the CSS position property of the element to relative, fixed, or absolute!</p>
+        <div class="default" style="background:brown;height:100px;width:100px;position:absolute;"></div>
+        <br><br><br><br><br><br><br><br>
+
+
+        <button id="btn11" style="background-color: black; color: white; width: 150px; height: 30px;">Start Animation</button>
+        <p>By default, all HTML elements have a static position, and cannot be moved. To manipulate the position, remember to first set the CSS position property of the element to relative, fixed, or absolute!</p>
+        <div class=" moved " style="background:lightblue;height:100px;width:100px;position:absolute; "></div>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+        <button id="btn12" style="background-color: black; color: white; width: 150px; height: 30px;">Start Animation</button>
+        <p>By default, all HTML elements have a static position, and cannot be moved. To manipulate the position, remember to first set the CSS position property of the element to relative, fixed, or absolute!</p>
+        <div style="background:#98bf21;height:100px;width:200px;position:absolute;" class="and">HELLO</div>
+        <br><br><br><br><br><br><br><br><br>
+
+
+
+        <button id="stop" style="background-color: black; color: white; width: 100px; height: 30px;">Stop sliding</button>
+        <div id="flip3" style="padding:5px; font-size: 18px; text-align: center;background-color: #555;color: white;border: solid 1px #666; border-radius: 3px;">Click to slide down panel</div>
+        <div id="panel3" style="padding:50px; font-size:18px; text-align: center;background-color: #555;color: white;border: solid 1px #666; border-radius: 3px;display:none;">Hello world!</div>
+        <br><br>
+
+
+
+        <button id="btn13" style="background-color: black; color: white; width: 70px; height: 30px;">Hide</button>
+        <p class="little">This is a paragraph with little content.</p>
+        <br><br>
+
+
+
+        <button id="btn14" style="background-color: black; color: white; width: 70px; height: 30px;">Hide</button>
+        <p class="little">This is a paragraph with little content.</p>
+        <br>
+        <p id="p1">jQuery is fun!!</p>
+        <button id="btn15" style="background-color: black; color: white; width: 70px; height: 30px;">Click me</button>
+    </div>
+</body>
+
+</html>

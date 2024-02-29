@@ -1,0 +1,20 @@
+body {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.datepicker {
+    margin: 50px 0px;
+}
+
+.datepicker p {
+    font-size: 25px;
+}
+
+.slider label {
+    font-size: 25px;
+}
+
+.slider {
+    margin-bottom: 100px;
+}
